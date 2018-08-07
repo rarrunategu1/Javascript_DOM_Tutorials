@@ -1,0 +1,16 @@
+What is the DOM?
+
+The DOM (Document Object Model) is created by the browser whenever
+a web page loads.  It looks like a tree of elements to include 
+parent and child elments.
+
+This model allows us to interact with web pages in javascript 
+to make changes to it.
+
+We can make read and make changes to HTML elements, Css styles, 
+href, src, alt and custom attributes.
+
+We can even create new html elements and insert into the DOM.
+
+Also we can attach event listeners to elements such as
+click, keypress, submit and react to those with javascript.

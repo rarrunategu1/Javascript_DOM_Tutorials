@@ -28,4 +28,3 @@ document.getElementById('page-banner') //page-banner is an id on this page.
 
 I can store that element in a variable like so:
 var banner = document.getElementById('page-banner')
-

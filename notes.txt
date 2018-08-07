@@ -28,3 +28,75 @@ document.getElementById('page-banner') //page-banner is an id on this page.
 
 I can store that element in a variable like so:
 var banner = document.getElementById('page-banner')
+
+GET ELEMENT BY CLASS NAME AND TAG
+
+This one is almost the same as the id one.  
+
+document.getElementsByClassName('title')
+
+Give it a variable
+
+var titles = document.getElementsByClassName('title')
+
+*Since title is a class there will be multiple.  You can access each one like so:
+
+titles[0]
+
+BY TAG NAME
+
+var lis = document.getElementsByTagName('li')
+undefined
+lis
+HTMLCollection(4) [li, li, li, li]0: li1: li2: li3: lilength: 4__proto__: HTMLCollection
+
+You can also access the individual elements as you do with class:
+
+lis[0]
+
+
+What if I want to query the DOM for all the 
+title class elements and style them in a particular way:
+
+for (i =0; i<titles.length; i++) {
+    console.log(titles[i])
+}
+Will give you every title below:
+VM194:2 <h1 data-cloud9-id=​"11" class=​"title">​Bookorama​</h1>​
+VM194:2 <h2 data-cloud9-id=​"16" class=​"title">​Books to Read​</h2>​
+
+     or you can cycle through it through a js file
+     linked to your html
+     
+If you try this it won't work because titles isn't an array
+forEach is only for arrays
+
+var titles = document.getElementsByClassName('title');
+
+titles.forEach(function(item){
+    console.log(item);
+})
+
+Let's check if it's an array:
+var titles = document.getElementsByClassName('title');
+
+console.log(Array.isArray(titles));
+*This will return false because it's not an array
+
+So let's turn it into an array:
+
+var titles = document.getElementsByClassName('titles');
+
+console.log(Array.isArray(titles));
+console.log(Array.isArray(Array.from(titles)));  //this line turns it into array, now returning true
+
+So now I can change the initial code to read:
+
+var titles = document.getElementsByClassName('title');
+
+Array.from(titles).forEach(function(item){
+console.log(item);
+})
+
+Now it will console.log every title
+     

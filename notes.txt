@@ -13,4 +13,22 @@ href, src, alt and custom attributes.
 We can even create new html elements and insert into the DOM.
 
 Also we can attach event listeners to elements such as
+<<<<<<< HEAD
 click, keypress, submit and react to those with javascript.
+=======
+click, keypress, submit and react to those with javascript.
+
+GET ELEMENT BY ID
+
+First step to get an element ID is to reach into the webpage
+by typing "document" in the console when inspecting a webpage 
+(without the quotes of course) and it will display the document 
+code, line by line. 
+
+To get it an element by id you would do the following
+in the console next:
+document.getElementById('page-banner') //page-banner is an id on this page.
+
+I can store that element in a variable like so:
+var banner = document.getElementById('page-banner')
+>>>>>>> Lesson-2-GetElementById

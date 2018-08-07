@@ -13,9 +13,6 @@ href, src, alt and custom attributes.
 We can even create new html elements and insert into the DOM.
 
 Also we can attach event listeners to elements such as
-<<<<<<< HEAD
-click, keypress, submit and react to those with javascript.
-=======
 click, keypress, submit and react to those with javascript.
 
 GET ELEMENT BY ID
@@ -31,4 +28,3 @@ document.getElementById('page-banner') //page-banner is an id on this page.
 
 I can store that element in a variable like so:
 var banner = document.getElementById('page-banner')
->>>>>>> Lesson-2-GetElementById

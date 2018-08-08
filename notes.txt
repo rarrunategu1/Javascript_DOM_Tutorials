@@ -99,4 +99,43 @@ console.log(item);
 })
 
 Now it will console.log every title
-     
+
+
+JAVASCRIPT QUERY SELECTOR
+
+In jquery you'd get an element like so:
+
+$('#wrapper') - this is for the id of wrapper
+
+but in the JS file we can do it like this:
+
+document.querySelector('#wrapper');
+
+store it in a variable -but it's called a constant in js:
+
+const wrap =document.querySelector('#wrapper');
+
+*The following code will pull the class name of the 2nd child of the li list
+in the booklist id.
+
+const wmf =document.querySelector('#book-list li:nth-child(2) .name');
+console.log(wmf);
+
+*What if I want to grab every name in the li under booklist?
+
+var books = document.querySelector('#book-list li .name');
+console.log(books);   NO NO NO
+
+THE ABOVE WONT WORK BECAUSE QUERYSELECTOR ONLY RETURNS ONE THING.
+IT RETURNS THE FIRST ITEM IT FINDS AND STOPS.
+
+QUERYSELECTORALL is what you want to get them all.  It returns a collection in square brackets:
+
+var books = document.querySelectorAll('#book-list li .name');
+console.log(books);
+
+*To cycle through the collection of books and display each one:
+
+Array.from(books).forEach(function(book){
+    console.log(book);
+})

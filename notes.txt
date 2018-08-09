@@ -139,3 +139,57 @@ console.log(books);
 Array.from(books).forEach(function(book){
     console.log(book);
 })
+
+LESSON 5 - CHANGING TXT & HTML CONTENT
+
+***When you use the querySelectorAll method it will return a nodelist
+you don't have to turn it into an array before running the foreach method
+You can just use book.forEach for example
+
+But when you use getElementsByClassName for example it returns an HTML
+collection and you do have to turn it into an array before usin the forEach
+method
+
+var books = document.querySelectorAll('#book-list li .name');
+
+Array.from(books).forEach(function(book){
+    console.log(book.textContent);
+})  
+
+This will retun text content of each book:
+
+app.js:21 Name of the Wind
+app.js:21 The Wise Man's Fear
+app.js:21 Kafka on the Shore
+app.js:21 The Master and the Margarita
+
+To change the text content:
+
+Array.from(books).forEach(function(book){
+    book.textContent = 'test';
+})  //will show "test" for each book title on the webpage
+
+To append the text content:
+
+Array.from(books).forEach(function(book){
+    book.textContent += ' test';
+})  //+= appends
+
+To update HTML on the page lets update it on the id book-list as you see below:
+
+const bookList = document.querySelector('#book-list');
+console.log(bookList.innerHTML);
+
+
+To change the content of the innerHTML selected in the <h2> tag:
+
+const bookList = document.querySelector('#book-list');
+bookList.innerHTML = '<h2>Books and more books...<h2>'
+
+And to append it:
+
+const bookList = document.querySelector('#book-list');
+bookList.innerHTML = '<h2>Books and more books...<h2>';
+bookList.innerHTML += '<p>This is how you add HTML<p>'
+
+

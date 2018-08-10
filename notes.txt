@@ -192,4 +192,52 @@ const bookList = document.querySelector('#book-list');
 bookList.innerHTML = '<h2>Books and more books...<h2>';
 bookList.innerHTML += '<p>This is how you add HTML<p>'
 
+LESSON 6 NODES
 
+Every single thing on a webpage is a node.  there are many types of nodes
+
+So to find out what type it is:
+
+const banner = document.querySelector('#page-banner');
+
+console.log('#page-banner node type is:', banner.nodeType);
+    ** This will return #page-banner node type is: 1.  What does that mean?
+        If you google Node types - Return Values you'll find a sheet that tells
+        what each node type number is.  1 is an element! 
+        
+Let's output the node name:
+
+const banner = document.querySelector('#page-banner');
+
+console.log('#page-banner node name is:', banner.nodeName);
+    * This will return that the node name is DIV so it tells you what element it is.
+        
+Let's find out if the node has a child:
+
+console.log('#page-banner has child nodes:', banner.hasChildNodes());
+    *This is a method so it will return either true or false.  The other two
+    were properties.
+    
+To clone a node:
+
+const clonedBanner = banner.cloneNode(true); //true gives us all the nested content including the children
+console.log(clonedBanner);
+    
+LESSON 7  TRAVERSING THE DOM
+
+const booklist = document.querySelector('#book-list'); //gets a reference to the booklist
+console.log('the parent node is:', booklist.parentNode);
+    *this 2nd line will return the parent of booklist which is wrapper
+
+This does the same thing:
+console.log('the parent element is:', booklist.parentElement);
+
+This will grab the parent element of the parent element of the booklist:
+console.log('the parent element is:', booklist.parentElement.parentElement);
+
+This will get you all the booklist's element children:
+console.log(booklist.children);
+
+if you do the following it will also give the line breaks aka text nodes which you don't need:
+console.log(booklist.childNodes);
+    

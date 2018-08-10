@@ -36,10 +36,19 @@ console.log('#page-banner has child nodes:', banner.hasChildNodes());
 const clonedBanner = banner.cloneNode(true); //true gives us all the nested content including the children
 console.log(clonedBanner);*/
 
-//Lesson 7
+/*Lesson 7
 
 const booklist = document.querySelector('#book-list'); //gets a reference to the booklist
 console.log('the parent node is:', booklist.parentNode);
 console.log('the parent element is:', booklist.parentElement.parentElement);
 
-console.log(booklist.children);
+console.log(booklist.children);*/
+
+//Lesson 8
+
+const bookList = document.querySelector('#book-list');
+console.log('book-list next sibling is:', bookList.nextSibling);
+console.log('book-list next element sibling is:', bookList.nextElementSibling);
+console.log('book-list previous element sibling is:', bookList.previousElementSibling);
+
+bookList.previousElementSibling.querySelector('p').innerHTML +='<br/>Too cool for everyone else';

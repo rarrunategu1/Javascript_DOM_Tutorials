@@ -241,3 +241,23 @@ console.log(booklist.children);
 if you do the following it will also give the line breaks aka text nodes which you don't need:
 console.log(booklist.childNodes);
     
+LESSON 8 DOM TRAVERSAL SIBLING ELEMENTS
+
+Sibling elements are elements that are on the same level or that have the same direct parent
+
+This code will get the next sibling which is a line break or text node:
+const bookList = document.querySelector('#book-list');
+console.log('book-list next sibling is:', bookList.nextSibling);
+
+To get the next sibling that is an element you'd do:
+console.log('book-list next element sibling is:', bookList.nextElementSibling);
+
+To get the previous element you'd just use previous:
+console.log('book-list previous element sibling is:', bookList.previousElementSibling);
+    *you can do the same for previous node
+    
+The following code will get the previous of booklist and go into the innerHTML of the p tag to append
+a break and sentence after it.
+
+bookList.previousElementSibling.querySelector('p').innerHTML +='<br/>Too cool for everyone else';
+

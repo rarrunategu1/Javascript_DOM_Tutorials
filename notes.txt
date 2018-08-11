@@ -301,3 +301,25 @@ link.addEventListener('click', function(event){  //this is listening to the even
     event.preventDefault();  //this will prevent the default action from occurring
     console.log('navigation to',event.target.textContent, 'was prevented');
 })
+
+
+LESSON 10 EVENT BUBBLING
+
+Event bubbling is the bubbling of event up through the DOM tree
+Whenever we have an event listener and you click say an li element,
+then the it fires it up and it bubbles up to it's direct parent element.
+If the parent element has a function as well it will run that and run on to the next parent element
+and if that has a function it'll run it too until it gets to the main parent element of that section.
+
+In the last lesson, we shouldn't have really added an event listener to
+each delete button (li)...because if we add another item on, it have the event listener on it.
+Imagine if there are a bunch of buttons that you have to keep giving event listeners to.
+The best thing is to add an event listener to the direct parent element of the li which is the ul
+
+const list = document.querySelector('#book-list ul');
+list.addEventListener('click', function(event){
+    if (event.target.className == 'delete') {
+        const li = event.target.parentElement;
+        li.parentNode.removeChild(li); //or list.parentNode.removeChild(li);
+    }
+})

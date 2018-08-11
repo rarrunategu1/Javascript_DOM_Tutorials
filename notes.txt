@@ -261,3 +261,43 @@ a break and sentence after it.
 
 bookList.previousElementSibling.querySelector('p').innerHTML +='<br/>Too cool for everyone else';
 
+
+LESSON 9 EVENTS
+
+Events are stuff that happen inside of the browser like keypress events, click events, 
+and submit events, etc.  
+
+We can react to events on a web page when they occur by adding 
+event listeners to the different elements that we want to listen to events on
+
+var h2 = document.querySelector('#book-list h2'); //this gets the h2 element in booklist
+h2.addEventListener('click', function(event){ //first parameter is the event we're going to react to, second is a function which will be what happens when the event happens on a page
+    console.log(event.target); // target will tell us which element was clicked
+    console.log(event); //just here so we can browse through it.
+});
+
+Let add even listeners to the delete buttons:
+
+First step is to query the dom for all delete buttons
+
+var btn = document.querySelectorAll('#book-list .delete');
+
+Array.from(btn).forEach(function(btn){
+    btn.addEventListener('click', function(event){
+        
+        const li = event.target.parentElement; //this will grab the parent element of the delete button which is li
+        
+        li.parentNode.removeChild(li);  //from the parentNode of Li which is UL I want to remove a child.  that child is li.  
+    });
+});
+
+THE PREVENT DEFAULT METHOD-
+
+If you have an anchor tag and you click on it it will take you somewhere.
+If we want to prevent it then the prevent default method will work.
+
+const link = document.querySelector('#page-banner a');  //this will grab the a tag in page banner
+link.addEventListener('click', function(event){  //this is listening to the event on it
+    event.preventDefault();  //this will prevent the default action from occurring
+    console.log('navigation to',event.target.textContent, 'was prevented');
+})

@@ -346,3 +346,26 @@ addForm.addEventListener('submit', function(event){
    console.log(value);
    
 });
+
+LESSON 12 CREATING ELEMENTS AND PLACING INTO THE DOM
+
+In order to add the input on our booklist to add a book:
+
+ //create element
+ const li = document.createElement('li');
+ const bookName = document.createElement('span');
+ const deleteBtn = document.createElement('span');
+ 
+ //add content
+ deleteBtn.textContent = 'delete';
+ bookName.textContent = value;
+ 
+ 
+ //append to document
+ li.appendChild(bookName);
+ li.appendChild(deleteBtn);
+ list.appendChild(li);
+});
+
+This code above will add the input but the delete button is not styled yet.
+

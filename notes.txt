@@ -323,3 +323,26 @@ list.addEventListener('click', function(event){
         li.parentNode.removeChild(li); //or list.parentNode.removeChild(li);
     }
 })
+
+LESSON 11 INTERACTING WITH FORMS
+
+On the inspect element of a web page you can access the forms by doing:
+
+document.forms
+
+YOu can use square bracket notation to target a certain one too:
+
+document.forms[0]  
+
+Or pass in the id of the forms
+
+document.forms['add-book']
+
+//add book-list
+const addForm = document.forms['add-book'];
+addForm.addEventListener('submit', function(event){
+   event.preventDefault(); //prevents the click event from happenin for now
+   const value = addForm.querySelector('input[Type = "text"]').value; //this will grab the users input and store in const
+   console.log(value);
+   
+});

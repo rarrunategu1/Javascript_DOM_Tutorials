@@ -81,10 +81,20 @@ link.addEventListener('click', function(event){  //this is listening to the even
 
 //Lesson 10
 
+//delete books
 const list = document.querySelector('#book-list ul');
 list.addEventListener('click', function(event){
     if (event.target.className == 'delete') {
         const li = event.target.parentElement;
         li.parentNode.removeChild(li); //or list.parentNode.removeChild(li);
     }
-})
+});
+
+//add book-list
+const addForm = document.forms['add-book'];
+addForm.addEventListener('submit', function(event){
+   event.preventDefault();
+   const value = addForm.querySelector('input[Type = "text"]').value;
+   console.log(value);
+   
+});

@@ -398,3 +398,27 @@ The code below appended to the JS file will work to style the button according t
 
 bookName.classList.add('name'); //bookname is a const for the new bookname entered by the user
 deleteBtn.classList.add('delete'); //deleteBtn is a const for delete button style
+
+LESSON 14 CHANGING ATTRIBUTES
+
+in the console we're going to grab the name of the first book in the unordered list with a class of name:
+
+var book = document.querySelector('li:first-child .name')
+
+to get an attribute of that book, on the console write:
+
+book.getAttribute('class')
+"name" //this is what it returns because books class attribute is name
+
+So if you want to change the name of the book which is Name of the Wind to Name Two:
+
+book.setAttribute('class', 'name-2')  //first argument picks the class attribute, second argument is what you want to change it to.
+
+to check if something has a certain attribute on the console:
+
+book.hasAttribute('class')  //this will check if there is an attribute of class
+
+to remove an attribute:
+
+book.removeAttribute('class')
+

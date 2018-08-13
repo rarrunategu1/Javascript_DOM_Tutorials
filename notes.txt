@@ -369,3 +369,32 @@ In order to add the input on our booklist to add a book:
 
 This code above will add the input but the delete button is not styled yet.
 
+LESSON 13 STYLES AND CLASSES
+
+We're trying to style the delete button.  In console, to look at the last delete button
+which is the input from the user with the delete next to it, write the following to store it:
+
+var li = document.querySelector('li:last-child')
+var li will then pull that element.
+
+then in the console to change the style of that li:
+
+li.style.color = "red"  // changes the text to red
+
+Let's add a margin in the console:
+
+li.style.margin-top <--This won't work because javascriptwill see the dash as a minus sign.  Instead you have to use:
+li.style.marginTop = "60px"
+
+To get an elements class name in the console do:
+
+li.className
+
+If it doesn't have on you can assign one:
+
+li.className = "text"
+
+The code below appended to the JS file will work to style the button according to what your css file has:
+
+bookName.classList.add('name'); //bookname is a const for the new bookname entered by the user
+deleteBtn.classList.add('delete'); //deleteBtn is a const for delete button style

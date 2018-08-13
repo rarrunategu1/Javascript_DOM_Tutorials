@@ -110,5 +110,13 @@ addForm.addEventListener('submit', function(event){
  li.appendChild(bookName);
  li.appendChild(deleteBtn);
  list.appendChild(li);
+ 
+ //Unfortunately, the code above doesn't style the delete button so it is just a word right after the input from the user.
+
+//Lesson 13 -CHANGING STYLES AND CLASSES
+
+//add classes
+bookName.classList.add('name');
+deleteBtn.classList.add('delete');
 });
 

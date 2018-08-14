@@ -451,3 +451,82 @@ LESSON 16 CREATE A SEARCH FILTER USING JAVASCRIPT
 This lesson will show me how to allow my search bar to search items on my website and only show those items that the user is searching
 We're going to do this by adding an event listener to my search input which is the key up event(when we click a key and release it)
 
+const searchBar = document.forms['search-books'].querySelector('input');//grabs reference to search bar
+searchBar.addEventListener('keyup', function(event){ //add the event listener
+    const term = event.target.value.toLowerCase(); //first thing we want to do in the function is grab the search term, whatever the user enters
+    //toLowerCase is a method that turns the whole string to lowercase
+    
+    const books = list.getElementsByTagName('li'); //then we'll grab all the li tags to find the book that's being searched
+    Array.from(books).forEach(function(book){ //cycle through the book names and perform an evaluation to figure out if the search term is contained within the titles of each book
+        //We're turning it into an array because it's an HTML collection, therefore we an't just use forEach
+        
+        const title = book.firstElementChild.textContent; //this const grabs the title of the book in our HTML collection
+        if(title.toLowerCase().indexOf(term)!= -1){  //indexOf is a method that will check out the position of the search term in the results.  If it's not found than it returns a -1.
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none';
+        }
+
+ });
+});
+
+LESSON 17 CREATING TABBED CONTENT
+
+the following was added to the HTML after the form:
+
+<div id="tabbed-content">
+        <ul class="tabs">
+          <li data-target="#about" class="active">About</li>    //clicking on this li tag you'd listen for the event using the data-target value
+          <li data-target="#contact">Contact</li>
+          //data-target above can be name data-beans, data-rice, data-whateveryouwant
+        </ul>
+        <div class="panel active" id="about">     //each tab above (li) is represented by a panel
+          <p>Content for about tab...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+        </div>
+        <div class="panel" id="contact">
+          <p>Content for contact tab...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+        </div>
+      </div>
+      
+Additional styling was added as well:
+
+#tabbed-content li{     //this makes the li look like a button
+    display: inline-block;
+    padding: 10px 14px;
+    background: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#tabbed-content .panel{    //this is to give the panel a display of none by default
+    display: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+#tabbed-content .panel.active{  //self explanatory.  active panel are displayed in block
+    display: block;
+}
+
+then in the JS file:
+
+//tabbed content
+
+const tabs = document.querySelector('.tabs');            //reference to tabs
+const panels = document.querySelectorAll('.panel');     //reference to all panels
+tabs.addEventListener('click', function(event){        //click event listener to the tabs
+    if(event.target.tagName == "LI"){                 //if what we click is an LI, then
+        const targetPanel = document.querySelector(event.target.dataset.target); //we grab the target panel reference to that target element.  dataset is a method that looks for the data-target
+    panels.forEach(function(panel){                 //cycle through each of the panels of the page
+        if (panel == targetPanel){                 //if it is
+            panel.classList.add('active');        //then do this
+        } else {
+            panel.classList.remove('active');   //if not, then do this
+        }
+    });
+    }
+});

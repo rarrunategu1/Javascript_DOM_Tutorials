@@ -149,3 +149,22 @@ searchBar.addEventListener('keyup', function(event){ //add the event listener
 
  });
 });
+
+//tabbed content
+
+const tabs = document.querySelector('.tabs');  //reference to tabs
+const panels = document.querySelectorAll('.panel');  //reference to all panels
+tabs.addEventListener('click', function(event){ //click event listener to the tabs
+    if(event.target.tagName == "LI"){  //if what we click is an LI, then
+        const targetPanel = document.querySelector(event.target.dataset.target); //we grab the target panel reference to that target element.  dataset is a method that looks for the data-target
+    panels.forEach(function(panel){  //cycle through each of the panels of the page
+        if (panel == targetPanel){  //if it is
+            panel.classList.add('active');  //then do this
+        } else {
+            panel.classList.remove('active'); //if not, then do this
+        }
+    });
+    }
+});
+
+

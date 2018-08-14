@@ -95,7 +95,7 @@ const addForm = document.forms['add-book'];
 addForm.addEventListener('submit', function(event){
    event.preventDefault();
    const value = addForm.querySelector('input[Type = "text"]').value;
-   
+ 
  //create element
  const li = document.createElement('li');
  const bookName = document.createElement('span');
@@ -118,5 +118,18 @@ addForm.addEventListener('submit', function(event){
 //add classes
 bookName.classList.add('name');
 deleteBtn.classList.add('delete');
+}); 
+//hide books
+
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change',function(event){ //notice for a checkbox, it's a change event, not a click
+if(hideBox.checked){
+    list.style.display = "none";
+} else {
+    list.style.display = "initial";
+}
+    
+
 });
+
 

@@ -422,3 +422,26 @@ to remove an attribute:
 
 book.removeAttribute('class')
 
+LESSON 15 CHECKBOXES AND CHANGE EVENTS
+
+In our html file under the form, we add a checkbox with additional styling in css:
+<form id="add-book">
+	    	<input type ="checkbox" id="hide"/> //this was added
+	    	<label for="hide">Hide all books</label> //this was added
+	    	<input type="text" placeholder="Add a book..." />
+	    	<button>Add</button>
+	    </form>
+	   
+Now we want to make the books hide with a once we check the box.  In the JS File:
+
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change',function(event){ //notice for a checkbox, it's a change event, not a click
+if(hideBox.checked){
+    list.style.display = "none";
+} else {
+    list.style.display = "initial";
+}
+    
+
+});
+

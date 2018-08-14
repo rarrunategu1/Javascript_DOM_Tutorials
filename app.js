@@ -81,6 +81,9 @@ link.addEventListener('click', function(event){  //this is listening to the even
 
 //Lesson 10
 
+document.addEventListener('DOMContentLoaded', function(){
+    
+
 //delete books
 const list = document.querySelector('#book-list ul');
 list.addEventListener('click', function(event){
@@ -168,3 +171,4 @@ tabs.addEventListener('click', function(event){ //click event listener to the ta
 });
 
 
+})

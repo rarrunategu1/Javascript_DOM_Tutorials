@@ -530,3 +530,18 @@ tabs.addEventListener('click', function(event){        //click event listener to
     });
     }
 });
+
+LESSON 18 DOM CONTENT LOADED EVENT
+
+Most times you want to add your script tag for your JS file into an html document at the bottom of it 
+but as a front end developer that might not be an option.
+
+If so, use the DOMCONTENTLOADEDEVENT so that it fires when the DOM has fully loaded
+and we're ready to work with it.  Where do you add it?
+
+Add it to the top of your JS file:
+
+document.addEventListener('DOMContentLoaded', function(){
+WRAP ALL YOUR CONTENT IN THIS FUNCTION
+
+})

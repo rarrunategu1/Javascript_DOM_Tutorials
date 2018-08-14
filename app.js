@@ -128,8 +128,24 @@ if(hideBox.checked){
 } else {
     list.style.display = "initial";
 }
+ });
     
+//filter books
+const searchBar = document.forms['search-books'].querySelector('input');//grabs reference to search bar
+searchBar.addEventListener('keyup', function(event){ //add the event listener
+    const term = event.target.value.toLowerCase(); //first thing we want to do in the function is grab the search term, whatever the user enters
+    //toLowerCase is a method that turns the whole string to lowercase
+    
+    const books = list.getElementsByTagName('li'); //then we'll grab all the li tags to find the book that's being searched
+    Array.from(books).forEach(function(book){ //cycle through the book names and perform an evaluation to figure out if the search term is contained within the titles of each book
+        //We're turning it into an array because it's an HTML collection, therefore we an't just use forEach
+        
+        const title = book.firstElementChild.textContent; //this const grabs the title of the book in our HTML collection
+        if(title.toLowerCase().indexOf(term)!= -1){  //indexOf is a method that will check out the position of the search term in the results.  If it's not found than it returns a -1.
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none';
+        }
 
+ });
 });
-
-

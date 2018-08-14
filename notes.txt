@@ -445,3 +445,9 @@ if(hideBox.checked){
 
 });
 
+
+LESSON 16 CREATE A SEARCH FILTER USING JAVASCRIPT
+
+This lesson will show me how to allow my search bar to search items on my website and only show those items that the user is searching
+We're going to do this by adding an event listener to my search input which is the key up event(when we click a key and release it)
+
